@@ -6,8 +6,11 @@ namespace f2u.API.Data
     public class DataContext : DbContext
     {
         DbContextOptions _contextOptions;
-        public DbSet<Value> Values { get; set; } 
-        public DataContext(DbContextOptions contextOptions): base(contextOptions)
-        {}
+        public DbSet<Value> Values { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DataContext(DbContextOptions contextOptions) : base(contextOptions)
+        {
+            _contextOptions = contextOptions;
+        }
     }
 }
