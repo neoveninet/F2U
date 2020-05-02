@@ -29,10 +29,7 @@ namespace f2u.API.Controllers
             this._repo = repo;
         }
 
-        public Task<User> Login(string userName, string password)
-        {
-            throw new NotImplementedException();
-        }
+
         //public async Task<IActionResult> Register([FromBody]UserRegisterDto userRegister)
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserRegisterDto userRegister)
