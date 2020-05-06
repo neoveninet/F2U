@@ -53,7 +53,7 @@ namespace f2u.API.Controllers
         {
 
             var userFromRepo = await _repo.Login(userLoginDto.UserName.ToLower(), userLoginDto.Password);
-            if (userFromRepo == null) { Unauthorized(); }
+            if (userFromRepo == null) { return Unauthorized("Either usename or password is not valid"); }
             var claims = new[]{
                new Claim(ClaimTypes.NameIdentifier,userFromRepo.Id.ToString()),
                 new Claim(ClaimTypes.Name,userFromRepo.UserName),
